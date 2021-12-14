@@ -20,3 +20,6 @@ A simple TV / Movie search app made with React.
 
 <h2>Others</h2>
 <a href="" target="_blank">Click here to read more</a>
+
+<h2>Credits</h2>
+<li>API from <a href="https://www.themoviedb.org/" target="_blank">The Movie Database (TMBD)</a></li>
