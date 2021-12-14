@@ -2,7 +2,7 @@
 Made for SEI33 - Project 2
 
 <h2>Introduction</h2>
-A simple TV/Movie search app made with React.
+A simple TV / Movie search app made with React.
 <br><a href="" target="_blank">Try it out here!</a>
 
 <h2>App Features</h2>
