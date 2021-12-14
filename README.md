@@ -9,8 +9,10 @@ A simple TV/Movie search app made with React.
 <ul>
   <li>Display upcoming Movies, popular Movies of the week, and popular TV Shows of the week</li>
   <li>Search Movies / TV Shows by name</li>
+</ul>
 
 <h2>Search results</h2>
+<ul>
   <li>Synopsis</li>
   <li>Link to show's site</li>
   <li>Add to Favourites<li>
