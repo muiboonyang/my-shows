@@ -1,2 +1,2 @@
-# tv-movie
-TV / Movie Search app
+# my-show-app
+My Show app
