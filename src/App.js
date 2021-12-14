@@ -9,7 +9,6 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 
 import FavContext from "./context/fav-context";
-// import FavList from "./components/FavList";
 
 const App = () => {
   const [favourites, setFavourites] = useState([]);
