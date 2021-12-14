@@ -32,9 +32,7 @@ const FavList = () => {
           Favourites <Badge bg="primary">{favouriteList.length}</Badge>
         </h2>
 
-        <p>
-          Click on a poster from the search results to add to your favourites!
-        </p>
+        <p>Click on 'X' to remove shows from your favourites</p>
       </div>
       <div className="row">{favouriteList}</div>
     </>

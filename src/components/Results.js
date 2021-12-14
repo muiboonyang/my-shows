@@ -69,6 +69,10 @@ const Results = (props) => {
         <h2>
           Search Results <Badge bg="primary">{results.length}</Badge>
         </h2>
+        <p>
+          Click on a poster to add to your favourites. Click on the 'Favourites'
+          tab to view them.
+        </p>
       </div>
       <div className="row">{results}</div>
     </>
