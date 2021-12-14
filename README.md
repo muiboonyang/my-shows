@@ -1,2 +1,2 @@
-# my-show-app
+# My Show app
 My Show app
