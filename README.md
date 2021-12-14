@@ -15,7 +15,7 @@ A simple TV/Movie search app made with React.
 <ul>
   <li>Synopsis</li>
   <li>Link to show's site</li>
-  <li>Add to Favourites<li>
+  <li>Add to Favourites</li>
 </ul>
 
 <h2>Others</h2>
