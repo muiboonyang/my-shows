@@ -99,17 +99,17 @@ const Home = () => {
       <Container className="carousel-container">
         <Row>
           <Col>
-            <h1>Upcoming Movies</h1>
+            <h1 className="carousel-header">Upcoming Movies</h1>
             <br />
             <CarouselMovie shows={comingSoon} />
           </Col>
           <Col>
-            <h1>Popular Movies</h1>
+            <h1 className="carousel-header">Popular Movies</h1>
             <br />
             <CarouselMovie shows={trendingMovie} />
           </Col>
           <Col>
-            <h1>Popular TV Shows</h1>
+            <h1 className="carousel-header">Popular TV Shows</h1>
             <br />
             <CarouselTV shows={trendingTv} />
           </Col>

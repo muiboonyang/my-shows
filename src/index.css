@@ -12,27 +12,16 @@ h1 {
   font-family: "Oxygen", sans-serif;
 }
 
-h1,
-h3,
-.backToSearch,
-.card-body {
-  text-align: center;
-}
-
 body {
-  margin: 0 10px;
+  margin: 0 50px;
   background-color: whitesmoke;
 }
 
-.centered {
-  margin: 3rem auto;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* Formatting for carousel */
 
-/* React bootstrap */
+.carousel-header {
+  text-align: center;
+}
 
 .carousel {
   text-align: center;
@@ -43,9 +32,32 @@ body {
 
 .carousel-title {
   background: rgba(28, 29, 28, 0.5);
+  text-decoration: none;
   color: white;
 }
 
+.carousel-title a {
+  text-decoration: none;
+  color: white;
+}
+
+.carousel-title a:hover {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Formatting for results */
+
+.spinner {
+  margin: 3rem auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-body,
 .footer {
   text-align: center;
 }
@@ -55,13 +67,9 @@ body {
   font-size: 13px;
 }
 
-.showtitle {
-  text-decoration: none;
-  color: #ffffff;
-}
+/* Formatting for contact page */
 
 .contact {
-  /* width: 800px; */
   margin: auto;
 }
 
@@ -70,8 +78,40 @@ body {
   align-items: right;
 }
 
-a:hover {
-  text-decoration: none;
+/* Formatting for navigation bar */
+
+.navbar {
+  width: 100%;
+  background-color: #222529;
+  overflow: auto;
+  position: relative;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  /* padding: 12px; */
+  padding: 6px 12px 6px 12px;
   color: white;
-  font-weight: bold;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.navbar active {
+  background-color: #000000;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
 }

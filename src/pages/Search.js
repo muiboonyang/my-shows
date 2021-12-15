@@ -94,7 +94,7 @@ const SearchContainer = () => {
 
   if (isLoading) {
     content = (
-      <div className="centered">
+      <div className="spinner">
         <Spinner animation="border" variant="danger" />
       </div>
     );

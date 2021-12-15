@@ -3,7 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
-import Favourites from "./pages/Favourites";
+
+import Login from "./pages/Login";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
@@ -54,28 +55,15 @@ const App = () => {
 
   return (
     <FavContext.Provider value={{ favourites, addFavourite, removeFavourite }}>
-      <BrowserRouter>
-        <div className="container">
-          <NavBar />
-          <br />
-          <Switch>
-            <Route exact path="/my-show-app/">
-              <Home />
-            </Route>
-
-            <Route exact path="/my-show-app/search">
-              <Search />
-            </Route>
-
-            <Route path="/my-show-app/favourites">
-              <Favourites />
-            </Route>
-
-            <Route path="/my-show-app/contact">
-              <Contact />
-            </Route>
-          </Switch>
-        </div>
+      <BrowserRouter basename="/my-show-app">
+        <NavBar />
+        <br />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/search" exact component={Search} />
+          <Route path="/contact" exact component={Contact} />
+          <Route path="/login" exact component={Login} />
+        </Switch>
       </BrowserRouter>
     </FavContext.Provider>
   );

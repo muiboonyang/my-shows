@@ -14,17 +14,29 @@ const NavBar = () => {
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/ClapperboardColor.svg/1024px-ClapperboardColor.svg.png"
               width="30"
               height="30"
-              className="d-inline-block align-top"
+              className="d-inline-block"
             />{" "}
-            My Show App
+            &nbsp; <b>My Show App</b>
           </Navbar.Brand>
 
           <Nav className="me-auto">
-            <Nav.Link href="/my-show-app/search">Search</Nav.Link>
+            <a href="/my-show-app/">
+              <i class="fa fa-fw fa-home"></i> Home
+            </a>
 
-            {/* <Nav.Link href="/my-show-app/favourites">Favourites</Nav.Link> */}
+            <a href="/my-show-app/search">
+              <i className="fa fa-fw fa-search"></i> Search
+            </a>
 
-            <Nav.Link href="/my-show-app/contact">Contact</Nav.Link>
+            <a href="/my-show-app/contact">
+              <i className="fa fa-fw fa-envelope"></i> Contact
+            </a>
+          </Nav>
+
+          <Nav placement="end">
+            <a href="/my-show-app/login">
+              <i className="fa fa-fw fa-user"></i> Login
+            </a>
           </Nav>
         </Container>
       </Navbar>
