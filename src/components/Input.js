@@ -11,10 +11,11 @@ const Input = (props) => {
           placeholder="Enter a show name"
           value={props.query}
           onChange={props.handleSearchInput}
+          onKeyPress={props.handleKeyPress}
           aria-label="Large"
           aria-describedby="inputGroup-sizing-sm"
         />
-        <Button variant="primary" onClick={props.onSubmitQuery}>
+        <Button variant="primary" onClick={props.onSubmitQuery} type="submit">
           Search
         </Button>
       </InputGroup>

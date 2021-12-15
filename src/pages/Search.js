@@ -74,7 +74,13 @@ const SearchContainer = () => {
     if (query.length > 0) {
       fetchShow();
       setHasSearched(true);
-      //   setQuery("");
+    }
+  };
+
+  const handleKeyPress = (target) => {
+    if (target.charCode === 13 && query.length > 0) {
+      fetchShow();
+      setHasSearched(true);
     }
   };
 
@@ -112,6 +118,7 @@ const SearchContainer = () => {
         <Input
           handleSearchInput={handleSearchInput}
           onSubmitQuery={onSubmitQuery}
+          handleKeyPress={handleKeyPress}
           query={query}
         />
         <br />
