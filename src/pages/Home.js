@@ -20,7 +20,7 @@ const Home = () => {
   const fetchComingSoon = async () => {
     const res = await fetch(url);
     const rawData = await res.json();
-    console.log(rawData.items);
+    console.log(rawData.results);
 
     const filteredData = rawData.results.map((result) => {
       const { original_title, poster_path, id, release_date } = result;

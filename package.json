@@ -1,5 +1,6 @@
 {
   "name": "react-complete-guide",
+  "homepage": "https://muiboonyang.github.io/my-show-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +11,7 @@
     "react-icons": "^4.3.1",
     "react-router-dom": "^5.3.0",
     "react-show-more-text": "^1.5.2",
+    "react-spinners": "^0.11.0",
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.2"
   },

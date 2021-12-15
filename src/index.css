@@ -59,3 +59,13 @@ body {
   text-decoration: none;
   color: #ffffff;
 }
+
+.contact {
+  /* width: 800px; */
+  margin: auto;
+}
+
+.contact-submit {
+  text-align: right;
+  align-items: right;
+}

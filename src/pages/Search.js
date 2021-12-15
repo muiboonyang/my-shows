@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Input from "../components/Input";
 import Results from "../components/Results";
-import LoadingSpinner from "../components/LoadingSpinner";
+import Spinner from "react-bootstrap/Spinner";
 
 import FavList from "../components/FavList";
 import Tabs from "react-bootstrap/Tabs";
@@ -95,7 +95,7 @@ const SearchContainer = () => {
   if (isLoading) {
     content = (
       <div className="centered">
-        <LoadingSpinner />
+        <Spinner animation="border" variant="danger" />
       </div>
     );
   }
