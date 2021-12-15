@@ -58,7 +58,6 @@ const Home = () => {
     });
 
     setTrendingMovie(filteredData2);
-    console.log(filteredData2);
   };
 
   //================
@@ -83,7 +82,6 @@ const Home = () => {
     });
 
     setTrendingTv(filteredData3);
-    console.log(filteredData3);
   };
 
   //===========
