@@ -21,7 +21,7 @@ const NavBar = () => {
 
           <Nav className="me-auto">
             <a href="/my-show-app/">
-              <i class="fa fa-fw fa-home"></i> Home
+              <i className="fa fa-fw fa-home"></i> Home
             </a>
 
             <a href="/my-show-app/search">

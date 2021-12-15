@@ -21,7 +21,13 @@ const Login = () => {
           <Form.Control type="password" placeholder="Enter password" />
           <Form.Text className="text-muted">
             <i>
-              <a href="#">Forgot password?</a>
+              <a
+                href="https://www.google.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Forgot password?
+              </a>
             </i>
           </Form.Text>
         </Form.Group>
