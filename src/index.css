@@ -69,3 +69,9 @@ body {
   text-align: right;
   align-items: right;
 }
+
+a:hover {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
