@@ -54,18 +54,20 @@ const App = () => {
   };
 
   return (
-    <FavContext.Provider value={{ favourites, addFavourite, removeFavourite }}>
-      <BrowserRouter basename="/my-show-app">
+    <BrowserRouter basename="/my-show-app/">
+      <FavContext.Provider
+        value={{ favourites, addFavourite, removeFavourite }}
+      >
         <NavBar />
         <br />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/search" exact component={Search} />
-          <Route path="/contact" exact component={Contact} />
-          <Route path="/login" exact component={Login} />
+          <Route path="/search/" exact component={Search} />
+          <Route path="/contact/" exact component={Contact} />
+          <Route path="/login/" exact component={Login} />
         </Switch>
-      </BrowserRouter>
-    </FavContext.Provider>
+      </FavContext.Provider>
+    </BrowserRouter>
   );
 };
 
