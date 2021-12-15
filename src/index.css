@@ -73,9 +73,11 @@ body {
   margin: auto;
 }
 
-.contact-submit {
-  text-align: right;
-  align-items: right;
+/* Formatting for login page */
+
+.login {
+  margin: auto;
+  width: 500px;
 }
 
 /* Formatting for navigation bar */
