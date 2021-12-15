@@ -26,9 +26,9 @@ const App = () => {
       const newShow = document.getElementById(e.target.id);
       prevState.push(newShow.src);
 
-      const deduped = Array.from(new Set(prevState));
+      const uniqueShows = Array.from(new Set(prevState));
 
-      let data = deduped.filter(function (element) {
+      let data = uniqueShows.filter(function (element) {
         return element !== undefined;
       });
 

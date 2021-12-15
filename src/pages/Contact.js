@@ -86,9 +86,12 @@ const Contact = () => {
           </Form.Text>
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" style={{ float: "right" }}>
           Submit
         </Button>
+        <br />
+        <br />
+        <br />
       </Form>
     </div>
   );
