@@ -8,7 +8,7 @@ const NavBar = () => {
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/my-show-app/">
+          <Navbar.Brand href="/">
             <img
               alt=""
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/ClapperboardColor.svg/1024px-ClapperboardColor.svg.png"
@@ -20,21 +20,21 @@ const NavBar = () => {
           </Navbar.Brand>
 
           <Nav className="me-auto">
-            <a href="/my-show-app/">
+            <a href="/">
               <i className="fa fa-fw fa-home"></i> Home
             </a>
 
-            <a href="/my-show-app/search">
+            <a href="/search">
               <i className="fa fa-fw fa-search"></i> Search
             </a>
 
-            <a href="/my-show-app/contact">
+            <a href="/contact">
               <i className="fa fa-fw fa-envelope"></i> Contact
             </a>
           </Nav>
 
           <Nav placement="end">
-            <a href="/my-show-app/login">
+            <a href="/login">
               <i className="fa fa-fw fa-user"></i> Login
             </a>
           </Nav>

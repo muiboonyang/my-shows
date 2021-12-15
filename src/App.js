@@ -54,7 +54,7 @@ const App = () => {
   };
 
   return (
-    <BrowserRouter basename="/my-show-app/">
+    <BrowserRouter>
       <FavContext.Provider
         value={{ favourites, addFavourite, removeFavourite }}
       >
@@ -62,9 +62,9 @@ const App = () => {
         <br />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/search/" exact component={Search} />
-          <Route path="/contact/" exact component={Contact} />
-          <Route path="/login/" exact component={Login} />
+          <Route path="/search" exact component={Search} />
+          <Route path="/contact" exact component={Contact} />
+          <Route path="/login" exact component={Login} />
         </Switch>
       </FavContext.Provider>
     </BrowserRouter>
