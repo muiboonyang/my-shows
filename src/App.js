@@ -59,19 +59,19 @@ const App = () => {
           <NavBar />
           <br />
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/my-show-app/">
               <Home />
             </Route>
 
-            <Route exact path="/search">
+            <Route exact path="/my-show-app/search">
               <Search />
             </Route>
 
-            <Route path="/favourites">
+            <Route path="/my-show-app/favourites">
               <Favourites />
             </Route>
 
-            <Route path="/contact">
+            <Route path="/my-show-app/contact">
               <Contact />
             </Route>
           </Switch>

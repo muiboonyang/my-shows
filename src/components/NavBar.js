@@ -8,7 +8,7 @@ const NavBar = () => {
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/">
+          <Navbar.Brand href="/my-show-app/">
             <img
               alt=""
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/ClapperboardColor.svg/1024px-ClapperboardColor.svg.png"
@@ -20,11 +20,11 @@ const NavBar = () => {
           </Navbar.Brand>
 
           <Nav className="me-auto">
-            <Nav.Link href="/search">Search</Nav.Link>
+            <Nav.Link href="/my-show-app/search">Search</Nav.Link>
 
-            {/* <Nav.Link href="/favourites">Favourites</Nav.Link> */}
+            {/* <Nav.Link href="/my-show-app/favourites">Favourites</Nav.Link> */}
 
-            <Nav.Link href="/contact">Contact</Nav.Link>
+            <Nav.Link href="/my-show-app/contact">Contact</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
