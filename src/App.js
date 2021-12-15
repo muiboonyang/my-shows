@@ -70,6 +70,7 @@ const App = () => {
             <Route path="/my-show-app/favourites">
               <Favourites />
             </Route>
+
             <Route path="/my-show-app/contact">
               <Contact />
             </Route>
