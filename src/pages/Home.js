@@ -19,12 +19,8 @@ const Home = () => {
 
   const fetchComingSoon = async () => {
     const res = await fetch(url);
-
-    if (res.status !== 200) {
-      throw new Error("Something went wrong.");
-    }
-
     const rawData = await res.json();
+
     console.log(rawData.results);
 
     const filteredData = rawData.results.map((result) => {
@@ -36,6 +32,7 @@ const Home = () => {
       } else {
         id = `movie/${id}`;
       }
+
       return {
         title: original_title,
         image: "https://image.tmdb.org/t/p/w500" + poster_path,
@@ -45,6 +42,7 @@ const Home = () => {
     });
 
     setComingSoon(filteredData);
+
     console.log(filteredData);
   };
 
@@ -61,11 +59,13 @@ const Home = () => {
     const filteredData2 = rawData2.results.map((result) => {
       let { original_title, poster_path, id, vote_average, media_type } =
         result;
+
       if (media_type === "tv") {
         id = `tv/${id}`;
       } else {
         id = `movie/${id}`;
       }
+
       return {
         title: original_title,
         image: "https://image.tmdb.org/t/p/w500" + poster_path,
@@ -89,6 +89,7 @@ const Home = () => {
 
     const filteredData3 = rawData3.results.map((result) => {
       let { original_name, poster_path, id, vote_average, media_type } = result;
+
       if (media_type === "tv") {
         id = `tv/${id}`;
       } else {
