@@ -4,10 +4,12 @@ import { v4 as uuidv4 } from "uuid";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
-// import Accordion from "react-bootstrap/Accordion";
 
 const FavList = (props) => {
-  let favouriteList = props.favourites.map((url, index) => {
+  let favouriteList = props.favourites.map((data, index) => {
+    let image = data.image;
+    let title = data.title;
+
     return (
       <Card
         className="card border-dark mb-3 mx-1"
@@ -15,7 +17,11 @@ const FavList = (props) => {
         key={uuidv4()}
         id={index}
       >
-        <Card.Img variant="top" src={url} />
+        <Card.Img variant="top" src={image} />
+
+        <Card.Body>
+          <Card.Title>{title}</Card.Title>
+        </Card.Body>
 
         <Button variant="danger" onClick={props.removeFavourite}>
           X

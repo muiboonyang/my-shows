@@ -50,7 +50,7 @@ const Search = () => {
           result;
 
         if (poster_path) {
-          poster_path = `https://image.tmdb.org/t/p/w500/${poster_path}`;
+          poster_path = `https://image.tmdb.org/t/p/w500${poster_path}`;
         } else {
           poster_path = "https://i.imgur.com/uBHanp4.png";
         }
@@ -83,18 +83,36 @@ const Search = () => {
   // ===========================
   // Code to add shows to Favourite List
   // Filter data:
-  // - Unique values (only 1 copy of the show to be added to favourites, no duplicates)
-  // - Set: collection of unique values (no duplicates)
-  // - Filter data to remove undefined elements + create a new Array
+  // - removeDuplicates() to ensure no duplicates (only 1 copy of the show to be added to favourites)
+  // - Filter() method to remove undefined elements + create a new Array
   // ===========================
 
   const addFavourite = (e) => {
     setFavourites((prevState) => {
       const newShow = document.getElementById(e.target.id);
 
-      prevState.push(newShow.src);
+      prevState.push({
+        image: newShow.src,
+        title: newShow.alt,
+      });
 
-      const uniqueShows = Array.from(new Set(prevState));
+      const removeDuplicates = (originalArray, objKey) => {
+        let uniqueArray = [];
+        let values = [];
+        let value;
+
+        for (var i = 0; i < originalArray.length; i++) {
+          value = originalArray[i][objKey];
+
+          if (values.indexOf(value) === -1) {
+            uniqueArray.push(originalArray[i]);
+            values.push(value);
+          }
+        }
+        return uniqueArray;
+      };
+
+      let uniqueShows = removeDuplicates(prevState, "image");
 
       let data = uniqueShows.filter(function (element) {
         return element !== undefined;

@@ -26,9 +26,9 @@ const Results = (props) => {
           variant="top"
           className="cards"
           id={uuidv4()}
+          onClick={props.addFavourite}
           src={show.image}
           alt={show.title}
-          onClick={props.addFavourite}
         />
 
         <Card.Body>
@@ -59,6 +59,8 @@ const Results = (props) => {
       </Card>
     );
   });
+
+  console.log(results);
 
   return (
     <>
