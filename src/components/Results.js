@@ -52,7 +52,7 @@ const Results = (props) => {
                 window.open(show.site);
               }}
             >
-              Watch here
+              Find out more
             </Button>
           </>
         </Card.Footer>

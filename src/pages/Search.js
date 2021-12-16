@@ -82,8 +82,10 @@ const Search = () => {
   // Favourite List
   // ===========================
   // Code to add shows to Favourite List
-  // Set: collection of unique values (no duplicates)
-  // Filter data to remove undefined elements
+  // Filter data:
+  // - Unique values (only 1 copy of the show to be added to favourites, no duplicates)
+  // - Set: collection of unique values (no duplicates)
+  // - Filter data to remove undefined elements + create a new Array
   // ===========================
 
   const addFavourite = (e) => {
@@ -106,12 +108,15 @@ const Search = () => {
   //=================================
   // Code to remove shows from Favourite List
   // gets image's ID based on clicked image -> use splice to remove it from Favourite List
+  // use Map to create a new array
   //=================================
 
   const removeFavourite = (e) => {
     setFavourites((prevState) => {
       const targetParentId = e.target.parentElement.id;
+
       prevState.splice(targetParentId, 1);
+
       const data2 = prevState.map((d) => {
         return d;
       });
