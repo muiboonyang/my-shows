@@ -60,8 +60,6 @@ const Results = (props) => {
     );
   });
 
-  console.log(results);
-
   return (
     <>
       <div className="results">

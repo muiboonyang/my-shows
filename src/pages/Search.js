@@ -3,7 +3,7 @@ import Input from "../components/Input";
 import Results from "../components/Results";
 import Spinner from "react-bootstrap/Spinner";
 
-import FavList from "../components/FavList";
+import Favourites from "../components/Favourites";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 
@@ -35,7 +35,6 @@ const Search = () => {
       }
 
       const rawData = await res.json();
-      console.log(rawData.results);
 
       // ===============================
       // Extract releavant info from fetch result
@@ -118,7 +117,6 @@ const Search = () => {
         return element !== undefined;
       });
 
-      console.log(data);
       return data;
     });
   };
@@ -138,7 +136,7 @@ const Search = () => {
       const data2 = prevState.map((d) => {
         return d;
       });
-      console.log(data2);
+
       return data2;
     });
   };
@@ -218,7 +216,7 @@ const Search = () => {
                 {searchResults}
               </Tab>
               <Tab eventKey="favourites" title="Favourites">
-                <FavList
+                <Favourites
                   favourites={favourites}
                   removeFavourite={removeFavourite}
                 />
