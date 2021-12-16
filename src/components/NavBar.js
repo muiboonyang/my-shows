@@ -11,7 +11,7 @@ const NavBar = () => {
           <Navbar.Brand href="/">
             <img
               alt=""
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/ClapperboardColor.svg/1024px-ClapperboardColor.svg.png"
+              src="https://i.imgur.com/kNVaDX5.png"
               width="30"
               height="30"
               className="d-inline-block"
