@@ -42,11 +42,11 @@ const Login = () => {
         </Row>
 
         <div className="d-grid gap-2">
-          <Button variant="primary" type="submit" size="lg">
+          <Button variant="dark" type="submit" size="lg">
             Log In
           </Button>
           <hr />
-          <Button variant="outline-primary" type="submit" size="lg">
+          <Button variant="outline-dark" type="submit" size="lg">
             Sign Up
           </Button>
         </div>

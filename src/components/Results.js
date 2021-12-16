@@ -49,7 +49,7 @@ const Results = (props) => {
         <Card.Footer className="footer">
           <>
             <Button
-              variant="danger"
+              variant="outline-danger"
               onClick={(e) => {
                 e.preventDefault();
                 window.open(show.site);

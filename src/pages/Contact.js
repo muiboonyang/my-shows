@@ -384,7 +384,7 @@ const Contact = () => {
           </Form.Text>
         </Form.Group>
 
-        <Button variant="primary" type="submit" style={{ float: "right" }}>
+        <Button variant="dark" type="submit" style={{ float: "right" }}>
           Submit
         </Button>
 

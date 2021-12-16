@@ -15,7 +15,7 @@ const Input = (props) => {
           aria-label="Large"
           aria-describedby="inputGroup-sizing-sm"
         />
-        <Button variant="primary" onClick={props.onSubmitQuery} type="submit">
+        <Button variant="dark" onClick={props.onSubmitQuery} type="submit">
           Search
         </Button>
       </InputGroup>
