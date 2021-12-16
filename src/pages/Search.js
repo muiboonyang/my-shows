@@ -107,18 +107,18 @@ const SearchContainer = () => {
   // Image, Error, or Loading check
   // ===========================
 
-  let content = "";
+  let searchResults = "";
 
   if (shows) {
-    content = <Results shows={shows} />;
+    searchResults = <Results shows={shows} />;
   }
 
   if (error) {
-    content = <p>{error}</p>;
+    searchResults = <p>{error}</p>;
   }
 
   if (isLoading) {
-    content = (
+    searchResults = (
       <div className="spinner">
         <Spinner animation="border" variant="danger" />
       </div>
@@ -149,13 +149,12 @@ const SearchContainer = () => {
               className="mb-3"
             >
               <Tab eventKey="results" title="Results">
-                {content}
+                {searchResults}
               </Tab>
               <Tab eventKey="favourites" title="Favourites">
                 <FavList />
               </Tab>
             </Tabs>
-
             <br />
           </>
         ) : (

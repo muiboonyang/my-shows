@@ -67,7 +67,7 @@ const Results = (props) => {
     <>
       <div className="results">
         <h2>
-          Search Results <Badge bg="primary">{results.length}</Badge>
+          Search Results <Badge bg="dark">{results.length}</Badge>
         </h2>
         <p>
           Click on a poster to add to your favourites. Click on the 'Favourites'

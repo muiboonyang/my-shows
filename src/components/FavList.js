@@ -29,7 +29,7 @@ const FavList = () => {
     <>
       <div className="results">
         <h2>
-          Favourites <Badge bg="primary">{favouriteList.length}</Badge>
+          Favourites <Badge bg="dark">{favouriteList.length}</Badge>
         </h2>
 
         <p>Click on 'X' to remove shows from your favourites</p>
