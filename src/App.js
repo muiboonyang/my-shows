@@ -25,7 +25,11 @@ const App = () => {
   const addFavourite = (e) => {
     setFavourites((prevState) => {
       const newShow = document.getElementById(e.target.id);
+
       prevState.push(newShow.src);
+      // console.log(newShow);
+      // console.log(newShow.src);
+      // console.log(prevState);
 
       const uniqueShows = Array.from(new Set(prevState));
 

@@ -5,8 +5,9 @@ import FavContext from "../context/fav-context";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
+// import Accordion from "react-bootstrap/Accordion";
 
-const FavList = () => {
+const FavList = (props) => {
   const favCtx = useContext(FavContext);
 
   let favouriteList = favCtx.favourites.map((url, index) => {
@@ -18,6 +19,7 @@ const FavList = () => {
         id={index}
       >
         <Card.Img variant="top" src={url} />
+
         <Button variant="danger" onClick={favCtx.removeFavourite}>
           X
         </Button>

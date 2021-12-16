@@ -40,14 +40,8 @@ const SearchContainer = () => {
       // ===============================
 
       const filteredData = rawData.results.map((result) => {
-        let {
-          original_title,
-          original_name,
-          poster_path,
-          id,
-          overview,
-          media_type,
-        } = result;
+        let { original_title, name, poster_path, id, overview, media_type } =
+          result;
 
         if (poster_path) {
           poster_path = `https://image.tmdb.org/t/p/w500/${poster_path}`;
@@ -62,7 +56,7 @@ const SearchContainer = () => {
         }
 
         return {
-          title: original_title || original_name || "<Untitled>",
+          title: original_title || name,
           image: poster_path,
           synopsis: overview || "Coming soon!",
           site: `https://www.themoviedb.org/${id}`,
@@ -79,9 +73,10 @@ const SearchContainer = () => {
   };
 
   // ===========================
-  // 2 Functions to:
+  // 3 Functions to:
   // - handleSearchInput: manage changes to input field
   // - onSubmitQuery: initiate fetch request
+  // - handleKeyPress: allow submits using 'Enter' key
   // ===========================
 
   const handleSearchInput = (e) => {
