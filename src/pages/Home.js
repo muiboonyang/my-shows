@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import CarouselMovie from "../components/CarouselMovie";
-import CarouselTV from "../components/CarouselTV";
+import Carousel from "../components/Carousel";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+
+const apiKey = `${process.env.REACT_APP_API_KEY}`;
 
 const Home = () => {
   const [comingSoon, setComingSoon] = useState([]);
@@ -14,8 +15,7 @@ const Home = () => {
   // API2: Upcoming Movies (IMDB-API)
   //================
 
-  const url =
-    "https://api.themoviedb.org/3/movie/upcoming?api_key=03c16b8a9560a4ea683a37f203c3e79f&language=en-US&page=1";
+  const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&region=SG`;
 
   const fetchComingSoon = async () => {
     const res = await fetch(url);
@@ -23,7 +23,14 @@ const Home = () => {
     console.log(rawData.results);
 
     const filteredData = rawData.results.map((result) => {
-      const { original_title, poster_path, id, release_date } = result;
+      let { original_title, poster_path, id, release_date, media_type } =
+        result;
+
+      if (media_type === "tv") {
+        id = `tv/${id}`;
+      } else {
+        id = `movie/${id}`;
+      }
       return {
         title: original_title,
         image: "https://image.tmdb.org/t/p/w500" + poster_path,
@@ -40,15 +47,20 @@ const Home = () => {
   // API2: Trending Movies (TMDB)
   //================
 
-  const url2 =
-    "https://api.themoviedb.org/3/trending/movie/week?api_key=03c16b8a9560a4ea683a37f203c3e79f";
+  const url2 = `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}`;
 
   const fetchPopularMovie = async () => {
     const res2 = await fetch(url2);
     const rawData2 = await res2.json();
 
     const filteredData2 = rawData2.results.map((result) => {
-      const { original_title, poster_path, id, vote_average } = result;
+      let { original_title, poster_path, id, vote_average, media_type } =
+        result;
+      if (media_type === "tv") {
+        id = `tv/${id}`;
+      } else {
+        id = `movie/${id}`;
+      }
       return {
         title: original_title,
         image: "https://image.tmdb.org/t/p/w500" + poster_path,
@@ -64,15 +76,20 @@ const Home = () => {
   // API2: Trending TV Shows (TMDB)
   //================
 
-  const url3 =
-    "https://api.themoviedb.org/3/trending/tv/week?api_key=03c16b8a9560a4ea683a37f203c3e79f";
+  const url3 = `https://api.themoviedb.org/3/trending/tv/week?api_key=${apiKey}`;
 
   const fetchPopularTv = async () => {
     const res3 = await fetch(url3);
     const rawData3 = await res3.json();
 
     const filteredData3 = rawData3.results.map((result) => {
-      const { original_name, poster_path, id, vote_average } = result;
+      let { original_name, poster_path, id, vote_average, media_type } = result;
+      if (media_type === "tv") {
+        id = `tv/${id}`;
+      } else {
+        id = `movie/${id}`;
+      }
+
       return {
         title: original_name,
         image: "https://image.tmdb.org/t/p/w500" + poster_path,
@@ -99,17 +116,17 @@ const Home = () => {
           <Col>
             <h1 className="carousel-header">Upcoming Movies</h1>
             <br />
-            <CarouselMovie shows={comingSoon} />
+            <Carousel shows={comingSoon} />
           </Col>
           <Col>
             <h1 className="carousel-header">Popular Movies</h1>
             <br />
-            <CarouselMovie shows={trendingMovie} />
+            <Carousel shows={trendingMovie} />
           </Col>
           <Col>
             <h1 className="carousel-header">Popular TV Shows</h1>
             <br />
-            <CarouselTV shows={trendingTv} />
+            <Carousel shows={trendingTv} />
           </Col>
         </Row>
       </Container>

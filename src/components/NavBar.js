@@ -35,7 +35,7 @@ const NavBar = () => {
 
           <Nav placement="end">
             <a href="/login">
-              <i className="fa fa-fw fa-user"></i> Login
+              <i className="fa fa-fw fa-user"></i> Log In
             </a>
           </Nav>
         </Container>

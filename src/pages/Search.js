@@ -7,6 +7,8 @@ import FavList from "../components/FavList";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 
+const apiKey = `${process.env.REACT_APP_API_KEY}`;
+
 const SearchContainer = () => {
   const [query, setQuery] = useState("");
   const [shows, setShows] = useState([]);
@@ -18,35 +20,52 @@ const SearchContainer = () => {
   // Fetch shows from API based on query input
   // ====================================
 
-  const url = "https://api.tvmaze.com/search/shows?q=";
-
   const fetchShow = async () => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const res = await fetch(url + query);
+      const res = await fetch(
+        `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=${query}&region=SG`
+      );
       const rawData = await res.json();
-      console.log(rawData);
+      console.log(rawData.results);
 
       // ===============================
-      // Extract name and medium image from fetch result
+      // Extract releavant info from fetch result
       // - set a placeholder image for shows without pics (otherwise will show broken image link)
-      // - removes HTML element tags from show description
       //
-      // a5 = 'Cat' && 'Dog'       // t && t returns "Dog"
-      // a2 = true && false;       // t && f returns false
       // o5 = "Cat" || "Dog";      // t || t returns "Cat"
       // o6 = false || "Cat";      // f || t returns "Cat"
       // ===============================
 
-      const filteredData = rawData.map((result) => {
-        let { name, image, officialSite, url, summary } = result.show;
+      const filteredData = rawData.results.map((result) => {
+        let {
+          original_title,
+          original_name,
+          poster_path,
+          id,
+          overview,
+          media_type,
+        } = result;
+
+        if (poster_path) {
+          poster_path = `https://image.tmdb.org/t/p/w500/${poster_path}`;
+        } else {
+          poster_path = "https://i.imgur.com/uBHanp4.png";
+        }
+
+        if (media_type === "tv") {
+          id = `tv/${id}`;
+        } else {
+          id = `movie/${id}`;
+        }
+
         return {
-          title: name,
-          image: (image && image.medium) || "https://i.imgur.com/V8olf7q.png",
-          site: officialSite || url,
-          synopsis: (summary || "Coming soon!").replace(/<\/?[^>]+>/gi, ""),
+          title: original_title || original_name || "<Untitled>",
+          image: poster_path,
+          synopsis: overview || "Coming soon!",
+          site: `https://www.themoviedb.org/${id}`,
         };
       });
 
