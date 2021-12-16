@@ -101,7 +101,7 @@ const Search = () => {
         let values = [];
         let value;
 
-        for (var i = 0; i < originalArray.length; i++) {
+        for (let i = 0; i < originalArray.length; i++) {
           value = originalArray[i][objKey];
 
           if (values.indexOf(value) === -1) {
