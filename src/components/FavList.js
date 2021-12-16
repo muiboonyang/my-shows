@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import FavContext from "../context/fav-context";
 
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
@@ -8,9 +7,7 @@ import Badge from "react-bootstrap/Badge";
 // import Accordion from "react-bootstrap/Accordion";
 
 const FavList = (props) => {
-  const favCtx = useContext(FavContext);
-
-  let favouriteList = favCtx.favourites.map((url, index) => {
+  let favouriteList = props.favourites.map((url, index) => {
     return (
       <Card
         className="card border-dark mb-3 mx-1"
@@ -20,7 +17,7 @@ const FavList = (props) => {
       >
         <Card.Img variant="top" src={url} />
 
-        <Button variant="danger" onClick={favCtx.removeFavourite}>
+        <Button variant="danger" onClick={props.removeFavourite}>
           X
         </Button>
       </Card>

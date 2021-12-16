@@ -19,6 +19,11 @@ const Home = () => {
 
   const fetchComingSoon = async () => {
     const res = await fetch(url);
+
+    if (res.status !== 200) {
+      throw new Error("Something went wrong.");
+    }
+
     const rawData = await res.json();
     console.log(rawData.results);
 

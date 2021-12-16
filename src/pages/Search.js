@@ -9,12 +9,13 @@ import Tab from "react-bootstrap/Tab";
 
 const apiKey = `${process.env.REACT_APP_API_KEY}`;
 
-const SearchContainer = () => {
+const Search = () => {
   const [query, setQuery] = useState("");
   const [shows, setShows] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [favourites, setFavourites] = useState([]);
 
   // ====================================
   // Fetch shows from API based on query input
@@ -28,6 +29,11 @@ const SearchContainer = () => {
       const res = await fetch(
         `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=${query}&region=SG`
       );
+
+      if (res.status !== 200) {
+        throw new Error("Something went wrong.");
+      }
+
       const rawData = await res.json();
       console.log(rawData.results);
 
@@ -73,6 +79,48 @@ const SearchContainer = () => {
   };
 
   // ===========================
+  // Favourite List
+  // ===========================
+  // Code to add shows to Favourite List
+  // Set: collection of unique values (no duplicates)
+  // Filter data to remove undefined elements
+  // ===========================
+
+  const addFavourite = (e) => {
+    setFavourites((prevState) => {
+      const newShow = document.getElementById(e.target.id);
+
+      prevState.push(newShow.src);
+
+      const uniqueShows = Array.from(new Set(prevState));
+
+      let data = uniqueShows.filter(function (element) {
+        return element !== undefined;
+      });
+
+      console.log(data);
+      return data;
+    });
+  };
+
+  //=================================
+  // Code to remove shows from Favourite List
+  // gets image's ID based on clicked image -> use splice to remove it from Favourite List
+  //=================================
+
+  const removeFavourite = (e) => {
+    setFavourites((prevState) => {
+      const targetParentId = e.target.parentElement.id;
+      prevState.splice(targetParentId, 1);
+      const data2 = prevState.map((d) => {
+        return d;
+      });
+      console.log(data2);
+      return data2;
+    });
+  };
+
+  // ===========================
   // 3 Functions to:
   // - handleSearchInput: manage changes to input field
   // - onSubmitQuery: initiate fetch request
@@ -105,7 +153,7 @@ const SearchContainer = () => {
   let searchResults = "";
 
   if (shows) {
-    searchResults = <Results shows={shows} />;
+    searchResults = <Results shows={shows} addFavourite={addFavourite} />;
   }
 
   if (error) {
@@ -147,7 +195,10 @@ const SearchContainer = () => {
                 {searchResults}
               </Tab>
               <Tab eventKey="favourites" title="Favourites">
-                <FavList />
+                <FavList
+                  favourites={favourites}
+                  removeFavourite={removeFavourite}
+                />
               </Tab>
             </Tabs>
             <br />
@@ -160,4 +211,4 @@ const SearchContainer = () => {
   );
 };
 
-export default SearchContainer;
+export default Search;

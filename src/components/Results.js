@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import { v4 as uuidv4 } from "uuid";
-import FavContext from "../context/fav-context";
 
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
@@ -8,8 +7,6 @@ import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
 
 const Results = (props) => {
-  const favCtx = useContext(FavContext);
-
   // ==================================================
   // Display results in Cards with the following info:
   // - Image
@@ -31,7 +28,7 @@ const Results = (props) => {
           id={uuidv4()}
           src={show.image}
           alt={show.title}
-          onClick={favCtx.addFavourite}
+          onClick={props.addFavourite}
         />
 
         <Card.Body>
