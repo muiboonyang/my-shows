@@ -116,4 +116,8 @@ body {
     float: none;
     display: block;
   }
+
+  .login {
+    width: 300px;
+  }
 }
