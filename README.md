@@ -2,24 +2,27 @@
 Made for SEI33 - Project 2
 
 <h2>Introduction</h2>
-A simple TV / Movie search app made with React.
-<br><a href="https://agitated-stonebraker-2f33ff.netlify.app/" target="_blank">Try it out here!</a>
+A simple TV / Movie search app made with React and Express.js.
+<br><a href="" target="_blank">Try it out here!</a>
 
 <h2>App Features</h2>
+
+<h3>Resident: If you need help with tasks</h3>
 <ul>
-  <li>Display upcoming Movies, popular Movies of the week, and popular TV Shows of the week</li>
-  <li>Search Movies / TV Shows by name</li>
+  <li>Crete a new acccount and log in</li>
+  <li>Create a new request for your specific task (form autofills personal info using the backend)</li>
+  <li>Change your personal details</li>
+  <li>Track the status of your current requests</li>
+  <li>Mark task as compelted once it is done</li>
+  
 </ul>
 
-<h2>Search results</h2>
+<h3>Volunteer: If you are helping others</h3>
 <ul>
-  <li>Synopsis</li>
-  <li>Link to show's site</li>
-  <li>Add to Favourites</li>
+  <li>View the full list of tasks that need help.</li>
+  </li>Visible info: requestor's name, task title, task type, task description, deadline, date created, map, contact requestor via email)</li>
+  <li>Filter tasks according to their type (i.e. Plumbing, Cleaning and Grocery)</li>
+  <li>Help make someone's day by accepting and completing their task!</li>
+  <li>Get in touch with the requestor (via email or their contact number)</li>
+  <li>Leave a review for the requestor after the task is completed</li>
 </ul>
-
-<h2>Others</h2>
-<a href="https://github.com/muiboonyang/my-show-app/tree/main/slides" target="_blank">Click here to read more</a>
-
-<h2>Credits</h2>
-<li>API from <a href="https://www.themoviedb.org/" target="_blank">The Movie Database (TMBD)</a></li>
