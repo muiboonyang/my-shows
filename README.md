@@ -16,7 +16,6 @@ A simple TV / Movie search app made with React.
 </ul>
 
 <h2>Others</h2>
-<a href="" target="_blank">Click here to read more</a>
 <a href="https://github.com/muiboonyang/my-show-app/tree/main/slides" target="_blank">Click here to read more</a>
 
 <h2>Credits</h2>
