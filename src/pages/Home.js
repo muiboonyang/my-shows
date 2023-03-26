@@ -4,8 +4,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const apiKey = `${process.env.REACT_APP_API_KEY}`;
-
 const Home = () => {
   const [comingSoon, setComingSoon] = useState([]);
   const [trendingMovie, setTrendingMovie] = useState([]);
@@ -15,6 +13,7 @@ const Home = () => {
   // API2: Upcoming Movies (IMDB-API)
   //================
 
+  const apiKey = `${process.env.REACT_APP_API_KEY}`;
   const url = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&region=SG`;
 
   const fetchComingSoon = async () => {

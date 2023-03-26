@@ -1,7 +1,6 @@
 import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
 
 const NavBar = () => {
   return (
@@ -15,7 +14,7 @@ const NavBar = () => {
             height="30"
             className="d-inline-block"
           />{" "}
-          &nbsp; <b>My Show App</b>
+          &nbsp; <b>TV Movie App</b>
         </Navbar.Brand>
 
         <Nav className="me-auto">
