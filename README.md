@@ -1,4 +1,4 @@
-# My Shows App
+# My Shows
 Made for SEI33 - Project 2
 <h2>Introduction</h2>
 A simple TV / Movie search app made with React.
