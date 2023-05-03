@@ -19,8 +19,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "react-scripts": "4.0.3"
+    "@testing-library/user-event": "^13.5.0"
   },
   "scripts": {
     "predeploy": "npm run build",
