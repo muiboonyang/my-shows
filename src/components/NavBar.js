@@ -14,7 +14,7 @@ const NavBar = () => {
             height="30"
             className="d-inline-block"
           />{" "}
-          &nbsp; <b>My Shows App</b>
+          &nbsp; <b>My Shows</b>
         </Navbar.Brand>
 
         <Nav className="me-auto">
