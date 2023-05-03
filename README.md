@@ -1,8 +1,8 @@
-# My Show App
+# My Shows App
 Made for SEI33 - Project 2
 <h2>Introduction</h2>
 A simple TV / Movie search app made with React.
-<br><a href="https://tv-movie-app.netlify.app/" target="_blank">Try it out here!</a>
+<br><a href="https://my-shows-app.netlify.app/" target="_blank">Try it out here!</a>
 <h2>App Features</h2>
 <ul>
   <li>Display upcoming Movies, popular Movies of the week, and popular TV Shows of the week</li>
