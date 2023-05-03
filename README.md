@@ -2,6 +2,7 @@
 Made for SEI33 - Project 2
 <h2>Introduction</h2>
 A simple TV / Movie search app made with React.
+<br>
 <br><a href="https://my-shows-sg.herokuapp.com/" target="_blank">Try it out here!</a>
 <h2>App Features</h2>
 <ul>
